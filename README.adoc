@@ -54,5 +54,5 @@ Maybe a ProgressMonitor for project creation.
 == See Also
 
 A great resource for Eclipse Plugin Development is
-Lars Vogel's https://vogella.com[vogella.com].
+Lars Vogel's http://vogella.com[vogella.com].
 Lars offers both free online tutorials and in-class instruction (in Europe).
