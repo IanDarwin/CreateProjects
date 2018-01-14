@@ -6,8 +6,6 @@ https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 == HowTo
 
-Fixup minor validation problem (for now just click `Continue`).
-
 Open the project in Eclipse.
 
 Change the list of projects at the top of `CreateProjects.java`.
@@ -15,13 +13,20 @@ Change the list of projects at the top of `CreateProjects.java`.
 If the courses are in a different workspace:
 . Export the project as a Plug-in.
 . Install the plugin using normal Eclipse mechanism.
-. RunAs->Eclipse Application
+. or `RunAs->Eclipse Application`.
+
+Make sure you are in the workspace where you want to create projects
+(Use `File->Switch` Workspace if needed).
+
+Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects`.
 
 Click the big button that says `Create`.
 
-Watch your projects appear out of the ether!
+Kick back and watch your projects appear out of the ether!
 
 = TODO
+
+Fixup minor validation problem (for now just click `Continue`).
 
 Have the code check for Java Nature, Maven Nature, etc.
 
@@ -38,3 +43,5 @@ the file, e.g.,
 	ex31solution
 	javasrc		C:/javasrc
 	jpademo		C:/jpademo
+
+A ProgressMonitor for project creation.
