@@ -23,7 +23,7 @@ Click `Finish`. Accept the "unsigned" warning (if you trust me, mwah ha ha).
 Accept the `Restart now` choice if offered.
 
 Now make sure you are in the workspace where you want to create projects
-(Use `File->Switch` Workspace if needed).
+(Use `File->Switch Workspace` if needed).
 
 Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects`.
 
