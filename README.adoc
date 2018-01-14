@@ -1,4 +1,4 @@
-= CreateAllProjects
+= CreateProjects
 
 This is a fairly crude Eclipse plug-in that will create the Eclipse metadata
 for the course projects, commonly for use after my other project
