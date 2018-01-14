@@ -1,0 +1,40 @@
+= CreateAllProjects
+
+This is a fairly crude Eclipse plug-in that will create the Eclipse metadata
+for the course projects, commonly for use after my other project
+https://github.com/IanDarwin/makehandson[makehandson] has been run.
+
+== HowTo
+
+Fixup minor validation problem (for now just click `Continue`).
+
+Open the project in Eclipse.
+
+Change the list of projects at the top of `CreateProjects.java`.
+
+If the courses are in a different workspace:
+. Export the project as a Plug-in.
+. Install the plugin using normal Eclipse mechanism.
+. RunAs->Eclipse Application
+
+Click the big button that says `Create`.
+
+Watch your projects appear out of the ether!
+
+= TODO
+
+Have the code check for Java Nature, Maven Nature, etc.
+
+Make a more realistic UI!? It would show the list of projects with checkboxes
+and color coded status (created, has JavaNature, has MavenNature, etc.)
+
+Read the list of projects from a file. 
+
+You might ask: why not just read the directory of the workspace? Because the
+next TODO is to support projects at external files with a 2nd argument in
+the file, e.g.,
+
+	ex31
+	ex31solution
+	javasrc		C:/javasrc
+	jpademo		C:/jpademo
