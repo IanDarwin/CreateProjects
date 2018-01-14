@@ -8,14 +8,21 @@ https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 Open the project in Eclipse.
 
-Change the list of projects at the top of `CreateProjects.java`.
+Edit the list of projects to suit your course list of projects,
+at the top of `CreateProjects.java` (this will eventually move out of the code
+into a file or GUI).
 
-If the courses are in a different workspace:
-. Export the project as a Plug-in.
-. Install the plugin using normal Eclipse mechanism.
-. or `RunAs->Eclipse Application`.
+If you want to test it standalone, right-click on the project and do
+`RunAs->Eclipse Application`.
 
-Make sure you are in the workspace where you want to create projects
+For now it's easiest to Export the project as a Plug-in into your main workspace.
+Just do `Export->PlugIn Development->Deployable Plugins and Fragments`.
+Click next. Select the `CreateProjects` plugin
+and select the strangely-named `Install into host. Repository.`
+Click `Finish`. Accept the "unsigned" warning (if you trust me, mwah ha ha).
+Accept the `Restart now` choice if offered.
+
+Now make sure you are in the workspace where you want to create projects
 (Use `File->Switch` Workspace if needed).
 
 Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects`.
@@ -28,20 +35,24 @@ Kick back and watch your projects appear out of the ether!
 
 Fixup minor validation problem (for now just click `Continue`).
 
-Have the code check for Java Nature, Maven Nature, etc.
+Have the code check that project has Java Nature, Maven Nature, etc.
 
-Make a more realistic UI!? It would show the list of projects with checkboxes
+Make a more realistic UI. It could show the list of projects with checkboxes
 and color coded status (created, has JavaNature, has MavenNature, etc.)
 
-Read the list of projects from a file. 
-
-You might ask: why not just read the directory of the workspace? Because the
-next TODO is to support projects at external files with a 2nd argument in
-the file, e.g.,
+Read the list of projects from a file.  You might ask: why not just read the
+directory of the workspace? Because the next TODO is to support projects at
+external file locations with a 2nd argument in the file, e.g.,
 
 	ex31
 	ex31solution
 	javasrc		C:/javasrc
 	jpademo		C:/jpademo
 
-A ProgressMonitor for project creation.
+Maybe a ProgressMonitor for project creation.
+
+== See Also
+
+A great resource for Eclipse Plugin Development is
+Lars Vogel's https://vogella.com[vogella.com].
+Lars offers both free online tutorials and in-class instruction (in Europe).
