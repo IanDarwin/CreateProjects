@@ -19,6 +19,8 @@ public class CreateProjects {
     List<String> projectNames = Arrays.asList(
     	    "donow31",
     	    "donow31solution",
+    	    "donow21",
+    	    "donow21solution",
     	    "ember",
     	    "embersolution",
     	    "ex21",
