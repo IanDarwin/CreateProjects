@@ -2,7 +2,7 @@
 
 This is a fairly crude Eclipse plug-in that will create the Eclipse metadata
 for the course projects, commonly for use after my other project
-https://github.com/IanDarwin/makehandson[makehandson] has been run.
+https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 == HowTo
 
