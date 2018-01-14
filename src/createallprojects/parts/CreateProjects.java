@@ -8,6 +8,7 @@ import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 
 public class CreateProjects {
@@ -61,6 +62,10 @@ public class CreateProjects {
 	    				project.create(new NullProgressMonitor());
 	    				project.open(null);	// verifies the project?
 	    			} else {
+	    				IPath rawLocation = project.getRawLocation();
+					if (rawLocation == null) {
+	    					System.err.println("Warning: Project %s exists but has no location");
+	    				}
 	    				project.refreshLocal(-1, null);
 	    			}
 	    			project.close(null);		// Close unconditionally
