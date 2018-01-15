@@ -25,9 +25,9 @@ Accept the `Restart now` choice if offered.
 Now make sure you are in the workspace where you want to create projects
 (Use `File->Switch Workspace` if needed).
 
-Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects`.
+Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects View`.
 
-Click the big button that says `Create`.
+Click the big button at the bottom that says `Create`.
 
 Kick back and watch your projects appear out of the ether!
 
