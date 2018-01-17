@@ -65,14 +65,14 @@ public class CreateProjects {
 	    		try {
 	    			if (!project.exists()) {
 	    				project.create(new NullProgressMonitor());
-	    				project.open(null);	// verifies the project?
-	    			} else {
-	    				IPath rawLocation = project.getRawLocation();
-					if (rawLocation == null) {
-	    					System.err.println("Warning: Project %s exists but has no location");
-	    				}
-	    				project.refreshLocal(-1, null);
 	    			}
+					project.open(null);	// verifies the project
+					IPath rawLocation = project.getRawLocation();
+					if (rawLocation == null) {
+						System.err.println("Warning: Project %s exists but has no location");
+					}
+					project.refreshLocal(-1, null); // Force refreshing even if proj existed.
+
 	    			// Close project after a few seconds, give it time to update, sync, etc.
 	    			threadPool.submit( () -> { 
 	    				try {
