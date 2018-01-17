@@ -54,8 +54,9 @@ public class CreateProjects {
     	);
     
 
+    ExecutorService threadPool = Executors.newFixedThreadPool(5);
+    
 	public void doCreates() {
-		ExecutorService threadPool = Executors.newFixedThreadPool(5);
 	    	System.out.println("CreateProjects.execute()");
 	    	IWorkspace workspace = ResourcesPlugin.getWorkspace();
 	    	IWorkspaceRoot root = workspace.getRoot();
@@ -73,15 +74,14 @@ public class CreateProjects {
 	    				project.refreshLocal(-1, null);
 	    			}
 	    			// Close project after a few seconds, give it time to update, sync, etc.
-	    			Runnable r = () -> { 
+	    			threadPool.submit( () -> { 
 	    				try {
 						Thread.sleep(5 * 1000);
 						project.close(null); 
 					} catch (InterruptedException | CoreException e) {
 						throw new RuntimeException("Close thread failed: " + e, e);
 					}
-	    			};
-	    			threadPool.submit(r);
+	    			} );
 	    		} catch (CoreException e) {
 	    			System.out.println(e);
 	    		}
