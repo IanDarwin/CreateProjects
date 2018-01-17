@@ -2,6 +2,8 @@ package createallprojects.parts;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspace;
@@ -50,8 +52,10 @@ public class CreateProjects {
     	    "samples",
     	    "samples_ee8"
     	);
+    
 
 	public void doCreates() {
+		ExecutorService threadPool = Executors.newFixedThreadPool(5);
 	    	System.out.println("CreateProjects.execute()");
 	    	IWorkspace workspace = ResourcesPlugin.getWorkspace();
 	    	IWorkspaceRoot root = workspace.getRoot();
@@ -68,7 +72,16 @@ public class CreateProjects {
 	    				}
 	    				project.refreshLocal(-1, null);
 	    			}
-	    			project.close(null);		// Close unconditionally
+	    			// Close project after a few seconds, give it time to update, sync, etc.
+	    			Runnable r = () -> { 
+	    				try {
+						Thread.sleep(5 * 1000);
+						project.close(null); 
+					} catch (InterruptedException | CoreException e) {
+						throw new RuntimeException("Close thread failed: " + e, e);
+					}
+	    			};
+	    			threadPool.submit(r);
 	    		} catch (CoreException e) {
 	    			System.out.println(e);
 	    		}
