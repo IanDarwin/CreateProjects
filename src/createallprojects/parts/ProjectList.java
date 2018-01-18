@@ -47,7 +47,7 @@ public class ProjectList {
     	    // Now the ones at wonky locations
     	    
 		new ProjDesc("datamodel", absPrefix + "/TicketManor/datamodel"),
-		new ProjDesc("ticketmanor-ee", absPrefix + "/TicketManor/ticketmanor-ee"),
+		new ProjDesc("ticketmanor-ee", absPrefix + "/TicketManorJava/ticketmanor-ee"),
 		new ProjDesc("clublist", absPrefix + "/clublist"),
 		new ProjDesc("javasrc", absPrefix + "/javasrc"),
 		new ProjDesc("jpademo", absPrefix + "/jpademo"),
