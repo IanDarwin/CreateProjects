@@ -1,7 +1,7 @@
 = CreateProjects
 
 This is a fairly crude Eclipse plug-in that will create the Eclipse metadata
-for the course projects, initially for 
+for the course projects, initially for
 https://learningtree.com/936/[my Java Enterprise course],
 and commonly for use after my other project
 https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
@@ -32,6 +32,9 @@ Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects View`.
 Click the big button at the bottom that says `Create`.
 
 Kick back and watch your projects appear out of the ether!
+Note that this can take up to 5-10 minutes, so be patient.
+First time I ran it, I was just about to send a `kill` signal after 5 mins,
+when "to my wondering eyes", it finished.
 
 = TODO
 
