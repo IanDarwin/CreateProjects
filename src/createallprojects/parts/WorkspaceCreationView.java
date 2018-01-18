@@ -19,7 +19,7 @@ public class WorkspaceCreationView {
 	private Button creationButton;
 	private Button closeAllButton;
 
-	CreateProjects createProjectsWorker = new CreateProjects();
+	CreateProjects createProjectsHelper = new CreateProjects();
 
 	@PostConstruct
 	public void createPartControl(Composite parent) {
@@ -35,8 +35,8 @@ public class WorkspaceCreationView {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				statusLabel.setText("Creating...");
-				createProjectsWorker.doCreates();
-				statusLabel.setText("All Done.");
+				createProjectsHelper.doCreates();
+				statusLabel.setText("All Done, but wait for 'Building workspace...'");
 			}
 
 			@Override
@@ -53,7 +53,7 @@ public class WorkspaceCreationView {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				statusLabel.setText("Closing...");
-				createProjectsWorker.doCloseAll();
+				createProjectsHelper.doCloseAll();
 				statusLabel.setText("All Done.");
 			}
 
