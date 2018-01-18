@@ -1,5 +1,7 @@
 package createallprojects.parts;
 
+import java.io.File;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
@@ -23,7 +25,11 @@ public class CreateProjects {
 			String path = pd.path;
 			IPath projectLocation = null;
 			if (path != null) {
-				projectLocation = new Path(path);
+				if (!new File(path).isDirectory()) {
+					System.err.println("WARNING: Project " + name + " Path " + path + " is not a directory");
+				} else {
+					projectLocation = new Path(path);
+				}
 			}
 				IProject project = root.getProject(name);
 				try {
