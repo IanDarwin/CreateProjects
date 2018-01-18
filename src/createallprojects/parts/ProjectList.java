@@ -5,7 +5,20 @@ import java.util.List;
 
 public class ProjectList {
 	
-	final static String absPrefix = "/Users/ian"; // Change to C: for production
+	/** NB: On Windows this is set to C:, and on *Nix it is set to ~
+	 * This may not work for everybody, but it Works For Me(tm).
+	 */
+	private static final String absPrefix;
+
+	static {
+		String osName = System.getProperty("os.name");
+		if (osName.startsWith("Windows")) {
+			absPrefix = "C:";
+		} else {
+			String home = System.getProperty("user.home", "/Users/ian");
+			absPrefix = home;
+		}
+	}
 
     /** List of projects to create.
      * This will need to be read from a file, which 
