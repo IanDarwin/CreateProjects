@@ -26,7 +26,7 @@ public class WorkspaceCreationView {
 		System.out.println("WorkspaceCreationView.createPartControl()");
 
 		statusLabel = new Label(parent, SWT.BORDER);
-		statusLabel.setText("Go ahead and make my day, punk!");
+		statusLabel.setText("Status field. This view is recommended for admin use only!");
 		
 		creationButton = new Button(parent, SWT.BORDER);
 		creationButton.setText("Create/Refresh All Projects");
