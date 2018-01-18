@@ -17,6 +17,9 @@ import org.eclipse.swt.widgets.*;
 public class WorkspaceCreationView {
 	private Label statusLabel;
 	private Button creationButton;
+	private Button closeAllButton;
+
+	CreateProjects createProjectsWorker = new CreateProjects();
 
 	@PostConstruct
 	public void createPartControl(Composite parent) {
@@ -26,21 +29,38 @@ public class WorkspaceCreationView {
 		statusLabel.setText("Go ahead and make my day, punk!");
 		
 		creationButton = new Button(parent, SWT.BORDER);
-		creationButton.setText("CREATE PROJECTS");
+		creationButton.setText("Create/Refresh All Projects");
 		creationButton.addSelectionListener(new SelectionListener() {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				statusLabel.setText("Creating...");
-				new CreateProjects().doCreates();
-				statusLabel.setText("Done!?!?");
+				createProjectsWorker.doCreates();
+				statusLabel.setText("All Done.");
 			}
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
-				statusLabel.setText("UNEXPECTED");
+				statusLabel.setText("UNEXPECTED: CreateButton");
 			}
 			
+		});
+
+		closeAllButton = new Button(parent, SWT.BORDER);
+		closeAllButton.setText("Close All Projects");
+		closeAllButton.addSelectionListener(new SelectionListener() {
+
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				statusLabel.setText("Closing...");
+				createProjectsWorker.doCloseAll();
+				statusLabel.setText("All Done.");
+			}
+
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) {
+				statusLabel.setText("UNEXPECTED: closeAllButton");
+			}
 		});
 
 	}
@@ -48,7 +68,6 @@ public class WorkspaceCreationView {
 	@Focus
 	public void setFocus() {
 		statusLabel.setFocus();
-
 	}
 
 	/**
