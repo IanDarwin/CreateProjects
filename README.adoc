@@ -1,7 +1,9 @@
 = CreateProjects
 
 This is a fairly crude Eclipse plug-in that will create the Eclipse metadata
-for the course projects, commonly for use after my other project
+for the course projects, initially for 
+https://learningtree.com/936/[my Java Enterprise course],
+and commonly for use after my other project
 https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 == HowTo
