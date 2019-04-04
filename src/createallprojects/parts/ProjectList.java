@@ -10,12 +10,16 @@ public class ProjectList {
 	 */
 	private static final String absPrefix;
 
+	/** On Windows on the course loads we drop a lot of things into C:
+	 * so they are easier to find; on *Nix, they go in the top of
+	 * my home directory. YMMV.
+	 */
 	static {
 		String osName = System.getProperty("os.name");
 		if (osName.startsWith("Windows")) {
 			absPrefix = "C:";
 		} else {
-			String home = System.getProperty("user.home", "/Users/ian");
+			String home = System.getProperty("user.home", "/home/ian");
 			absPrefix = home;
 		}
 	}
@@ -43,23 +47,24 @@ public class ProjectList {
     	    new ProjDesc("ex51solution", null),
     	    new ProjDesc("ex52", null),
     	    new ProjDesc("ex52solution", null),
-    	    new ProjDesc("ex53", null),
+    	    new ProjDesc("ex53server", null),
+    	    new ProjDesc("ex53serversolution", null),
     	    new ProjDesc("ex53client", null),
     	    new ProjDesc("ex53clientsolution", null),
-    	    new ProjDesc("ex53solution", null),
     	    new ProjDesc("ex61", null),
     	    new ProjDesc("ex61solution", null),
     	    new ProjDesc("ex71", null),
     	    new ProjDesc("ex71solution", null),
     	    new ProjDesc("ex81", null),
     	    new ProjDesc("ex81solution", null),
+    	    new ProjDesc("exUS", null),
+    	    new ProjDesc("exUSsolution", null),
     	    new ProjDesc("minimal", null),
     	    new ProjDesc("samples", null),
-    	    new ProjDesc("samples_ee8", null),
     	    
-    	    // Now the ones at wonky locations
+    	    // Now the ones at wonky locations - not in the workspace
     	    
-		new ProjDesc("datamodel", absPrefix + "/TicketManor/datamodel"),
+		new ProjDesc("datamodel", absPrefix + "/TicketManorJava/datamodel"),
 		new ProjDesc("ticketmanor-ee", absPrefix + "/TicketManorJava/ticketmanor-ee"),
 		new ProjDesc("clublist", absPrefix + "/clublist"),
 		new ProjDesc("javasrc", absPrefix + "/javasrc"),
