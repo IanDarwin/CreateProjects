@@ -11,21 +11,24 @@ https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 Open the project in Eclipse.
 
 Edit the list of projects to suit your course list of projects,
-at the top of `CreateProjects.java` (this will eventually move out of the code
+in `ProjectsList.java` (this will eventually move out of the code
 into a file or GUI).
+
+Make sure you are in the workspace where you want to create projects
+(Use `File->Switch Workspace` if needed).
 
 If you want to test it standalone, right-click on the project and do
 `RunAs->Eclipse Application`.
 
 For now it's easiest to Export the project as a Plug-in into your main workspace.
-Just do `Export->PlugIn Development->Deployable Plugins and Fragments`.
+Just do `File->Export->PlugIn Development->Deployable Plugins and Fragments`.
 Click next. Select the `CreateProjects` plugin
-and select the strangely-named `Install into host. Repository.`
+and select the strangely-named `Install into host. Repository:` 
+(it should have filled in the Repository with a subdirectory of the current workspace;
+do not change this).
 Click `Finish`. Accept the "unsigned" warning (if you trust me, mwah ha ha).
-Accept the `Restart now` choice if offered.
-
-Now make sure you are in the workspace where you want to create projects
-(Use `File->Switch Workspace` if needed).
+Accept the `Restart now` choice if offered; you can only do this export once
+without restarting, so might as well accept it now.
 
 Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects View`.
 
@@ -36,7 +39,10 @@ Note that this can take up to 5-10 minutes, so be patient.
 First time I ran it, I was just about to send a `kill` signal after 5 mins,
 when "to my wondering eyes", it finished.
 
-= TODO
+Now give Eclipse a few more mins to build all the projects, and maybe do some
+maven fetching as well.
+
+== TODO
 
 Fixup minor validation problem (for now just click `Continue`).
 
