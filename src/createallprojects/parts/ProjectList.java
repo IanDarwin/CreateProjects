@@ -57,8 +57,8 @@ public class ProjectList {
     	    new ProjDesc("ex71solution", null),
     	    new ProjDesc("ex81", null),
     	    new ProjDesc("ex81solution", null),
-    	    new ProjDesc("exUS", null),
-    	    new ProjDesc("exUSsolution", null),
+    	    new ProjDesc("ex101", null),
+    	    new ProjDesc("ex101solution", null),
     	    new ProjDesc("minimal", null),
     	    new ProjDesc("samples", null),
     	    
