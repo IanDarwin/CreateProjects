@@ -29,6 +29,7 @@ public class ProjectList {
      * makehandsons will (someday) generate the starting version of
      */
     private static List<ProjDesc> projects = Arrays.asList(
+    	    new ProjDesc("cdi-ee-examples", null),
     	    new ProjDesc("donow31", null),
     	    new ProjDesc("donow31solution", null),
     	    new ProjDesc("donow21", null),
