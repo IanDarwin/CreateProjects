@@ -29,7 +29,6 @@ public class ProjectList {
      * makehandsons will (someday) generate the starting version of
      */
     private static List<ProjDesc> projects = Arrays.asList(
-    	    new ProjDesc("cdi-ee-examples", null),
     	    new ProjDesc("donow31", null),
     	    new ProjDesc("donow31solution", null),
     	    new ProjDesc("donow21", null),
@@ -67,6 +66,7 @@ public class ProjectList {
     	    
 		new ProjDesc("datamodel", absPrefix + "/TicketManorJava/datamodel"),
 		new ProjDesc("ticketmanor-ee", absPrefix + "/TicketManorJava/ticketmanor-ee"),
+		new ProjDesc("cdi-ee-examples", absPrefix + "/cdi-ee-examples"),
 		new ProjDesc("clublist", absPrefix + "/clublist"),
 		new ProjDesc("javasrc", absPrefix + "/javasrc"),
 		new ProjDesc("jpademo", absPrefix + "/jpademo"),
