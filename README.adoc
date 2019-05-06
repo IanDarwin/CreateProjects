@@ -39,8 +39,8 @@ Note that this can take up to 5-10 minutes, so be patient.
 First time I ran it, I was just about to send a `kill` signal after 5 mins,
 when "to my wondering eyes", it finished.
 
-Now give Eclipse a few more mins to build all the projects, and maybe do some
-maven fetching as well.
+Now give Eclipse a few more mins to build all the projects (and it may do some
+Maven fetching as well).
 
 == TODO
 
@@ -51,9 +51,10 @@ Have the code check that project has Java Nature, Maven Nature, etc.
 Make a more realistic UI. It could show the list of projects with checkboxes
 and color coded status (created, has JavaNature, has MavenNature, etc.)
 
-Read the list of projects from a file.  You might ask: why not just read the
-directory of the workspace? Because the next TODO is to support projects at
-external file locations with a 2nd argument in the file, e.g.,
+Read the list of projects from a file.  Why, instead, not just read the
+directory of the workspace? Because we support projects at
+external file locations with a 2nd argument of a project root
+outside the WORKSPACE directory, e.g.,
 
 	ex31
 	ex31solution
