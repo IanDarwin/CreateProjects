@@ -8,9 +8,16 @@ https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 == HowTo
 
-Open the `CreateProjects` project in Eclipse.
+Open the `CreateProjects` project in Eclipse:
 
-This is a DIY Eclipse Plugin, so you need the _e4_ tools. If you get a bunch of undefineds,
+* Either open it using the GIT plugin to clone and create at the same time
+* Or, git clone manually, and do `File->New->Java Project`, and just type
+`CreateProjects` in the `Project Name` field. When asked to create a `module-info`,
+click `Don't Create`.  If asked to `Open the Java perspective`, do so.
+
+This is a DIY Eclipse Plugin, so you need the _e4_ tools. 
+Not all Eclipse downloads include these.
+If you get a bunch of undefineds,
 you need to install _e4_. Go to `Help->Install New Software`, select 
 _Latest Release_ - `https://download.eclipse.releases/latest`, and pick
 `Eclipse e4 Tools Developer Resources.` (If it's already selected, that's
@@ -43,9 +50,10 @@ If you want to test the program standalone, right-click on the project and do
 `RunAs->Eclipse Application`.
 
 For now it's easiest to Export the project as a Plug-in into your main workspace.
-Just do `File->Export->PlugIn Development->Deployable Plugins and Fragments`.
-Click next. Select the `CreateProjects` plugin
-and select the strangely-named `Install into host. Repository:` 
+Just do `File->Export... PlugIn Development->Deployable Plugins and Fragments`.
+Click next. Select the `CreateProjects` plugin.
+Near the bottom of the dialog,
+select the strangely-named `Install into host. Repository:` 
 (it should have filled in the Repository with a subdirectory of the current workspace;
 do not change this).
 Click `Finish`. Accept the "unsigned" warning (if you trust me, mwah ha ha).
@@ -57,7 +65,7 @@ Open `Window->Show View->Other`, `Course Maintenance`, `Create Projects View`.
 Click the big button at the bottom that says `Create`.
 
 Kick back and watch your projects appear out of the ether!
-Note that this can take up to 5-10 minutes, so be patient.
+Note that *this can take up to 5-10 minutes, so be patient*.
 First time I ran it, I was just about to send a `kill` signal after 5 mins,
 when "to my wondering eyes", it finished.
 
