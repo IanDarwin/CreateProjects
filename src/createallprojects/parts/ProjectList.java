@@ -2,78 +2,49 @@ package createallprojects.parts;
 
 import java.util.Arrays;
 import java.util.List;
+import java.io.*;
+import java.nio.file.*;
 
 public class ProjectList {
 	
-	/** NB: On Windows this is set to C:, and on *Nix it is set to ~
-	 * This may not work for everybody, but it Works For Me(tm).
-	 */
-	private static final String absPrefix;
+	final static String CONFIG_RESOURCE_NAME = "projectslist.txt";
 
-	/** On Windows on the course loads we drop a lot of things into C:
-	 * so they are easier to find; on *Nix, they go in the top of
-	 * my home directory. YMMV.
+
+	/** 
+	 * The input is a list of projects, one per line. An optional
+	 * second field is the absolute path but excluding the leading "C:"
+	 * (so on Windows it goes in C:/whatever whereas in Unix/Linux
+	 * it goes in ~/whatever).
 	 */
-	static {
+	public static List<ProjDesc> getProjects() {
+		String absPrefix;
 		String osName = System.getProperty("os.name");
 		if (osName.startsWith("Windows")) {
 			absPrefix = "C:";
 		} else {
-			String home = System.getProperty("user.home", "/home/ian");
+			String home = System.getProperty("user.home", "/home/student");
 			absPrefix = home;
 		}
-	}
 
-    /** List of projects to create.
-     * This will need to be read from a file, which 
-     * makehandsons will (someday) generate the starting version of
-     */
-    private static List<ProjDesc> projects = Arrays.asList(
-    	    new ProjDesc("donow31", null),
-    	    new ProjDesc("donow31solution", null),
-    	    new ProjDesc("donow21", null),
-    	    new ProjDesc("donow21solution", null),
-    	    new ProjDesc("ember", null),
-    	    new ProjDesc("embersolution", null),
-    	    new ProjDesc("ex21", null),
-    	    new ProjDesc("ex21solution", null),
-    	    new ProjDesc("ex31", null),
-    	    new ProjDesc("ex31solution", null),
-    	    new ProjDesc("ex41", null),
-    	    new ProjDesc("ex41solution", null),
-    	    new ProjDesc("ex42", null),
-    	    new ProjDesc("ex42solution", null),
-    	    new ProjDesc("ex51", null),
-    	    new ProjDesc("ex51solution", null),
-    	    new ProjDesc("ex52", null),
-    	    new ProjDesc("ex52solution", null),
-    	    new ProjDesc("ex53client", null),
-    	    new ProjDesc("ex53clientsolution", null),
-    	    new ProjDesc("ex53", null),
-    	    new ProjDesc("ex53solution", null),
-    	    new ProjDesc("ex61", null),
-    	    new ProjDesc("ex61solution", null),
-    	    new ProjDesc("ex71", null),
-    	    new ProjDesc("ex71solution", null),
-    	    new ProjDesc("ex81", null),
-    	    new ProjDesc("ex81solution", null),
-    	    new ProjDesc("ex101", null),
-    	    new ProjDesc("ex101solution", null),
-    	    new ProjDesc("minimal", null),
-    	    new ProjDesc("samples", null),
-    	    
-    	    // Now the ones at wonky locations - not in the workspace
-    	    
-		new ProjDesc("datamodel", absPrefix + "/TicketManorJava/datamodel"),
-		new ProjDesc("ticketmanor-ee", absPrefix + "/TicketManorJava/ticketmanor-ee"),
-		new ProjDesc("cdi-ee-examples", absPrefix + "/cdi-ee-examples"),
-		new ProjDesc("clublist", absPrefix + "/clublist"),
-		new ProjDesc("javasrc", absPrefix + "/javasrc"),
-		new ProjDesc("jpademo", absPrefix + "/jpademo"),
-		new ProjDesc("jsfdemo", absPrefix + "/jsfdemo")
-    );
+		Path path = Path.of(CONFIG_RESOURCE_NAME);
 
-	public static List<ProjDesc> getProjects() {
-		return projects;
+		try {
+			return
+				Files.lines(path)
+					.map(s->{
+						String[] nad = s.split("\\s+");
+						switch(nad.length) {
+						case 1: return new ProjDesc(s, null);
+						case 2: return new ProjDesc(nad[0], absPrefix + nad[1]);
+						default: throw new ExceptionInInitializerError("Invalid line in project list: " + s);
+						}
+					})
+					.toList();
+						
+		} catch (FileNotFoundException e) {
+			throw new ExceptionInInitializerError("Couldn't open " + path.toAbsolutePath());
+		} catch (IOException e) {
+			throw new ExceptionInInitializerError("Couldn't create projects: " + e.toString());
+		}
 	}
 }

@@ -10,14 +10,28 @@ https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 Open the project in Eclipse.
 
-Edit the list of projects to suit your course list of projects,
-in `ProjectsList.java` (this will eventually move out of the code
-into a file or GUI).
-
 Make sure you are in the workspace where you want to create projects
 (Use `File->Switch Workspace` if needed).
 
-If you want to test it standalone, right-click on the project and do
+Create or edit the list of projects to suit your course list of projects,
+in `projectslist.java` in the root of the workspace
+(this will someday^Wsomedecade move out of the code into a GUI).
+
+The input is a list of projects, one per line. An optional
+second field for projects outside the workspace contains the absolute path 
+but excluding the leading "C:" (on Windows it goes in C:/whatever whereas in Unix/Linux
+it goes in ~/whatever).
+
+Sample input:
+
+	ex21
+	ex21solution
+	javasrc git/javasrc
+
+On Windows the `javasrc` project would be in C:\git\javasrc; on Unix/Linux it would
+be in ~/git/javasrc.
+
+If you want to test the program standalone, right-click on the project and do
 `RunAs->Eclipse Application`.
 
 For now it's easiest to Export the project as a Plug-in into your main workspace.
