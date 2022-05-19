@@ -84,6 +84,8 @@ Make a more realistic UI. It could:
 * Allow setting the absPath prefixed  (what now defaults to C: or ~).
 * Maybe a ProgressMonitor during project creation.
 
+Get the unit test working?
+
 == See Also
 
 A great resource for Eclipse Plugin Development is
