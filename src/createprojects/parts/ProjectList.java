@@ -3,6 +3,7 @@ package createprojects.parts;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class ProjectList {
 					})
 					.toList();
 						
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException | NoSuchFileException e) {
 			throw new ExceptionInInitializerError("Couldn't open " + path.toAbsolutePath());
 		} catch (IOException e) {
 			throw new ExceptionInInitializerError("Couldn't create projects: " + e.toString());
