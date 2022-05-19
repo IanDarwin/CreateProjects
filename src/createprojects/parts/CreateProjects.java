@@ -1,4 +1,4 @@
-package createallprojects.parts;
+package createprojectss.parts;
 
 import java.io.File;
 

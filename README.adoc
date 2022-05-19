@@ -8,7 +8,7 @@ https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 == HowTo
 
-Open the project in Eclipse.
+Open the `CreateProjects` project in Eclipse.
 
 Make sure you are in the workspace where you want to create projects
 (Use `File->Switch Workspace` if needed).

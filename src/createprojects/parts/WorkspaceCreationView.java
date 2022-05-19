@@ -1,4 +1,4 @@
-package createallprojects.parts;
+package createprojectss.parts;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;

@@ -3,7 +3,7 @@
 <plugin>
 
    <extension
-         id="createallprojects.fragment"
+         id="createprojectss.fragment"
          point="org.eclipse.e4.workbench.model">
       <fragment
             apply="notexists"
