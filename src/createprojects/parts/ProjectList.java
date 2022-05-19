@@ -7,9 +7,11 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.List;
 
+import org.eclipse.core.resources.ResourcesPlugin;
+
 public class ProjectList {
 	
-	final static String CONFIG_RESOURCE_NAME = "projectslist.txt";
+	final static String CONFIG_RESOURCE_NAME = "projectlist.txt";
 
 	/** 
 	 * The input is a list of projects, one per line. An optional
@@ -27,7 +29,14 @@ public class ProjectList {
 			absPrefix = home;
 		}
 
-		Path path = Path.of(CONFIG_RESOURCE_NAME);
+		var workspaceLoc = 
+				ResourcesPlugin
+				.getWorkspace()
+				.getRoot()
+				.getLocation()
+				.toString();
+		
+		Path path = Path.of(workspaceLoc, CONFIG_RESOURCE_NAME);
 
 		try {
 			return

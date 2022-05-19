@@ -29,7 +29,7 @@ Make sure you are in the workspace where you want to create projects
 (Use `File->Switch Workspace` if needed).
 
 Create or edit the list of projects to suit your course list of projects,
-in `projectslist.java` in the root of the workspace
+in `projectlist.java` _in the root of the workspace_
 (this will someday^Wsomedecade move out of the code into a GUI).
 
 The input is a list of projects, one per line. An optional

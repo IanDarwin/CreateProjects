@@ -17,10 +17,13 @@ public class CreateProjects {
     IWorkspace workspace = ResourcesPlugin.getWorkspace();
 	IWorkspaceRoot root = workspace.getRoot();
 	
+	/**
+	 * This is why we are here!
+	 */
 	public void doCreates() {
-			System.out.println("CreateProjects.execute()");
+		System.out.println("CreateProjects.execute()");
 
-			for (ProjDesc pd : ProjectList.getProjects()) {
+		for (ProjDesc pd : ProjectList.getProjects()) {
 			String name = pd.name();
 			String path = pd.path();
 			IPath projectLocation = null;

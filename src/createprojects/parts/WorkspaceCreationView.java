@@ -26,7 +26,7 @@ public class WorkspaceCreationView {
 		System.out.println("WorkspaceCreationView.createPartControl()");
 
 		statusLabel = new Label(parent, SWT.BORDER);
-		statusLabel.setText("Status field. This view is recommended for admin use only!");
+		statusLabel.setText("Status field. This tool is recommended for admin use only!");
 		
 		creationButton = new Button(parent, SWT.BORDER);
 		creationButton.setText("Create/Refresh All Projects");
@@ -68,30 +68,6 @@ public class WorkspaceCreationView {
 	@Focus
 	public void setFocus() {
 		statusLabel.setFocus();
-	}
-
-	/**
-	 * This method is kept for E3 compatiblity. You can remove it if you do not
-	 * mix E3 and E4 code. <br/>
-	 * With E4 code you will set directly the selection in ESelectionService and
-	 * you do not receive a ISelection
-	 * 
-	 * @param s
-	 *            the selection received from JFace (E3 mode)
-	 */
-	@Inject
-	@Optional
-	public void setSelection(@Named(IServiceConstants.ACTIVE_SELECTION) ISelection s) {
-		if (s==null || s.isEmpty())
-			return;
-
-		if (s instanceof IStructuredSelection) {
-			IStructuredSelection iss = (IStructuredSelection) s;
-			if (iss.size() == 1)
-				setSelection(iss.getFirstElement());
-			else
-				setSelection(iss.toArray());
-		}
 	}
 
 	/**
