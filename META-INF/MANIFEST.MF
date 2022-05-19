@@ -5,6 +5,7 @@ Bundle-Name: CreateProjects
 Bundle-SymbolicName: CreateProjects;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: javax.inject,
+ javax.annotation,
  org.eclipse.osgi,
  org.eclipse.jface,
  org.eclipse.e4.ui.model.workbench,
