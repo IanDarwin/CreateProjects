@@ -21,8 +21,8 @@ public class CreateProjects {
 			System.out.println("CreateProjects.execute()");
 
 			for (ProjDesc pd : ProjectList.getProjects()) {
-			String name = pd.name;
-			String path = pd.path;
+			String name = pd.name();
+			String path = pd.path();
 			IPath projectLocation = null;
 			if (path != null) {
 				if (!new File(path).isDirectory()) {
@@ -55,7 +55,7 @@ public class CreateProjects {
 
 	public void doCloseAll() {
 		for (ProjDesc pd : ProjectList.getProjects()) {
-			String projectName = pd.name;
+			String projectName = pd.name();
 			IProject project = root.getProject(projectName);
 
 			if (!project.exists()) {
