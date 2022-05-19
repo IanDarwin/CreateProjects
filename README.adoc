@@ -10,6 +10,14 @@ https://github.com/IanDarwin/makehandsons[makehandsons] has been run.
 
 Open the `CreateProjects` project in Eclipse.
 
+This is a DIY Eclipse Plugin, so you need the _e4_ tools. If you get a bunch of undefineds,
+you need to install _e4_. Go to `Help->Install New Software`, select 
+_Latest Release_ - `https://download.eclipse.releases/latest`, and pick
+`Eclipse e4 Tools Developer Resources.` (If it's already selected, that's
+not your problem). Click `Next` then `Finish`.
+In a minute or two you will be prompted to restart, which you must do
+if you just installed software.
+
 Make sure you are in the workspace where you want to create projects
 (Use `File->Switch Workspace` if needed).
 
