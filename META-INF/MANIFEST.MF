@@ -1,7 +1,8 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: CreateProjects
 Bundle-ManifestVersion: 2
-Bundle-Name: CreateAllProjects
-Bundle-SymbolicName: CreateAllProjects;singleton:=true
+Bundle-Name: CreateProjects
+Bundle-SymbolicName: CreateProjects;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: javax.inject,
  org.eclipse.osgi,
@@ -12,5 +13,5 @@ Require-Bundle: javax.inject,
  org.eclipse.e4.core.di.annotations,
  org.eclipse.core.resources;bundle-version="3.12.0",
  org.eclipse.core.runtime;bundle-version="3.13.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: javax.annotation;version="1.2.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11+
+
