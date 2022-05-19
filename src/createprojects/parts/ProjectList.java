@@ -10,7 +10,6 @@ public class ProjectList {
 	
 	final static String CONFIG_RESOURCE_NAME = "projectslist.txt";
 
-
 	/** 
 	 * The input is a list of projects, one per line. An optional
 	 * second field is the absolute path but excluding the leading "C:"
