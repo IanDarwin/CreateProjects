@@ -1,9 +1,10 @@
-package createprojectss.parts;
+package createprojects.parts;
 
-import java.util.Arrays;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
-import java.io.*;
-import java.nio.file.*;
 
 public class ProjectList {
 	
