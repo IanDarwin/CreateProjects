@@ -79,6 +79,7 @@ Fixup minor validation problem (for now just click `Continue`).
 Have the code check that project has Java Nature, Maven Nature, etc.
 
 Make a more realistic UI. It could:
+
 * show the list of all folders/projects with checkboxes.
 * use color coded status for them (created, has JavaNature, has MavenNature, etc.).
 * Allow setting the absPath prefixed  (what now defaults to C: or ~).
